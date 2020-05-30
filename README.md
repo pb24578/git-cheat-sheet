@@ -7,7 +7,7 @@ You must install he Git CLI (command line interface) from https://git-scm.com/.
 ### 1. Init
 There is no need to use commands such as ```git init``` to initiate a repository. Simply go to GitHub and initiate the repository there.
 
-### 2. Cloning
+### 2. Clone
 If we wish to clone an existing repository, then execute either one of these commands:
 - To clone using the same name as the repository: ```git clone <repo URL>```
 - To clone using a custom name: ```git clone <repo URL> <name>```
@@ -37,15 +37,17 @@ Now if you type ```git remote -v```, you will see this below:
 
 Now there are two remotes, which are origin and upstream. We can now use version control on either one of them!
 
-### 4. Branching
+### 4. Branch
 Now that our repository has been cloned (and maybe added a remote if it was forked), we can start creating our own development version called a "Branch".
 
-To create a new branch and switch into it, execute ```git checkout -b <branch name>```. Execute ```git branch -a``` to check if the branch was created successfully.
+To create a new branch and switch into it, execute ```git checkout -b <branch name>```.  
+To check if the branch was created, execute ```git branch -a```.  
+To only switch to another branch, execute ```git checkout <branch name>```.  
 
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we do ```git remote add upstream <branch name>```.
 
 # Making Changes
-### 1. Staging
+### 1. Stage
 If you make changes to your repository and want to track that you've created these changes, then you must stage these changes. Staging is also very helpful because it allows you to separate the changes made between commits, so it organizes your changes even more.
 
 In order to stage, execute either:
@@ -56,12 +58,12 @@ In order to stage, execute either:
 
 After you stage files, you can execute ```git status``` which would display the changes in your current branch. It will show everything from what files were modified, deleted, not yet staged, not yet committed, etc.
 
-### 2. Committing
+### 2. Commit
 If you want to record that you made changes, then you commit. Only commit after you've staged changes, or else it won't be able to see the record the tracked changes!
 
 To commit, execute: ```git commit -m <message> -m <description>```.
 
-### 3. Pushing
+### 3. Push
 Once we finished making our commits for a new update, then we can push our changes to a repository. Only push after you have created commits, or else there won't be anything to push.
 
 To push, execute: ```git push <remote name> <branch name>```.
@@ -77,3 +79,22 @@ git push origin develop
 ```
 
 Now on GitHub, you would see two commits titled "Initialize a few C programs" and "Create another C program".
+
+### Receiving Changes
+### 1. Fetch
+If we want to view changes from another branch before committing those changes into your branch, then you can use git fetch as a safe way to accomplish this. Fetching only downloads the changes, but it does not change any files or create any commits.
+
+To fetch, execute ```git fetch <remote> <branch name>```
+
+### 2. Merge
+If we want to merge changes from another branch, then we can merge them and change the files in our current branch. First, make sure to git fetch or else those changes will not be downloaded.
+
+To merge, execute ```git merge <remote> <branch name>```
+
+Note that there may exist a merge conflict, which occurs whenever two files from two branches modify the same region of a file while merging. Git will add merge conflict markers on the files that had the merge conflicts, then you must go in and resolve them yourself following the markers. These markers separate the conflicts as either the "incoming change" or the "current change". Once you change the files, you can stage, commit, then push the resolved fixes to the remote repository.
+- A good text editor (such as VS Code) or IDE will make it easier for you to view these merge markers
+
+### 3. Pull
+Pulling executes a fetch then a merge.
+
+To pull, execute ```git pull <remote> <branch name>```.
