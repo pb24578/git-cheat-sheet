@@ -5,19 +5,19 @@ First you must install he Git CLI (command line interface) from https://git-scm.
 
 # Initiating Repository
 ### 1. Init
-There is no need to use commands such as ```git init``` to initiate a reppsitory. Simply go to GitHub and initiate the repository there. Then, call ```git clone``` on that repository as described below.
+There is no need to use commands such as ```git init``` to initiate a repository. Simply go to GitHub and initiate the repository there.
 
 ### 2. Cloning
 If we wish to clone an existing repository, then execute either one of these commands:
-- To clone using the same name as the repository: ```git clone <repository URL>```
-- To clone using a custom name: ```git clone <repository URL> <name>```
+- To clone using the same name as the repository: ```git clone <repo URL>```
+- To clone using a custom name: ```git clone <repo URL> <name>```
 
 Now, the repository should be cloned as a folder in the directory that you executed the command from.
 
 If you want to clone a repository from another account to your personal account, you must first "Fork" that repository on GitHub. Now git clone the forked repository URL and start developing from there.
 
-### 3. Remote
-If you forked a repository from another account, then you need to configure a remote for the fork. A remote is the common  (also referred to as the parent or original) repository of all the related forked repositories.
+### 3. Remote (Optional, only follow if you forked a repository)
+If you forked a repository from another account, then you need to configure a remote for the fork. A remote is another repository that you may or may not make want to make changes to.
 
 If you type ```git remote -v``` you will see this below:
 ```bash
@@ -25,7 +25,7 @@ If you type ```git remote -v``` you will see this below:
 > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 ```
 
-As you notice, you only see the repository for your fork but not the remote. We want to also include the remote repository, too. Execute ```git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git``` to include the remote.
+As you notice, you only see the repository for your fork but not the remote. We want to also include the upstream (original) repository, too. Execute ```git remote add upstream <original repo's .git URL>``` to include the original repository as a remote.
 
 Now if you type ```git remote -v```, you will see this below:
 ```bash
@@ -36,3 +36,11 @@ Now if you type ```git remote -v```, you will see this below:
 ```
 
 Now there are two remotes, which are origin and upstream. We can now use version control on either one of them!
+
+### 4. Branching
+Now that our repository has been cloned (and maybe added a remote if it was forked), we can start creating our own development version called a "Branch".
+
+To create a new branch and switch into it, execute ```git checkout -b <branch name>```. Execute ```git branch -a``` to check if the branch was created successfully.
+
+If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we do ```git remote add upstream <branch name>```.
+
