@@ -1,7 +1,7 @@
 # Git Cheat Sheet
-This is a personal git cheat sheet that I use to learn and understand how to use rudementary git commands. It follows a sequential flow from starting a project, stagging files, committing changes, then pushing those commits to the repository.
+This is a personal git cheat sheet that I use to learn and understand how to use rudementary git commands. It follows a sequential flow from starting a project, staging files, committing changes, then pushing those commits to the repository.
 
-First you must install he Git CLI (command line interface) from https://git-scm.com/.
+You must install he Git CLI (command line interface) from https://git-scm.com/.
 
 # Initiating Repository
 ### 1. Init
@@ -44,3 +44,36 @@ To create a new branch and switch into it, execute ```git checkout -b <branch na
 
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we do ```git remote add upstream <branch name>```.
 
+# Making Changes
+### 1. Staging
+If you make changes to your repository and want to track that you've created these changes, then you must stage these changes. Staging is also very helpful because it allows you to separate the changes made between commits, so it organizes your changes even more.
+
+In order to stage, execute either:
+- To stage only a single file: ```git add <file>```
+- To stage a folder: ```git add <folder>```
+- To stage all files recursively in the current directory: ```git add .```
+- To stage all files of the repository: ```git add -A```
+
+After you stage files, you can execute ```git status``` which would display the changes in your current branch. It will show everything from what files were modified, deleted, not yet staged, not yet committed, etc.
+
+### 2. Committing
+If you want to record that you made changes, then you commit. Only commit after you've staged changes, or else it won't be able to see the record the tracked changes!
+
+To commit, execute: ```git commit -m <message> -m <description>```.
+
+### 3. Pushing
+Once we finished making our commits for a new update, then we can push our changes to a repository. Only push after you have created commits, or else there won't be anything to push.
+
+To push, execute: ```git push <remote name> <branch name>```.
+
+A common example of git version control flow would look like this:
+```bash
+git add file1.c
+git add file2.c
+git commit -m "Initialize a few C programs" -m "These programs are necessary for the application"
+git add file3.c
+git commit -m "Create another C program" -m "This file is also necessary"
+git push origin develop
+```
+
+Now on GitHub, you would see two commits titled "Initialize a few C programs" and "Create another C program".
