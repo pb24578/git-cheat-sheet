@@ -44,7 +44,7 @@ To create a new branch and switch into it, execute ```git checkout -b <branch na
 To check if the branch was created, execute ```git branch -a```.  
 To only switch to another branch, execute ```git checkout <branch name>```.  
 
-If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we do ```git remote add upstream <branch name>```.
+If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we execute ```git remote add upstream <branch name>```.
 
 # Making Changes
 ### 1. Stage
@@ -58,15 +58,23 @@ In order to stage, execute either:
 
 After you stage files, you can execute ```git status``` which would display the changes in your current branch. It will show everything from what files were modified, deleted, not yet staged, not yet committed, etc.
 
+To revert a git add, execute ```git reset <file>``` or to revert all changes execute ```git reset```.
+
 ### 2. Commit
 If you want to record that you made changes, then you commit. Only commit after you've staged changes, or else it won't be able to see the record the tracked changes!
 
-To commit, execute: ```git commit -m <message> -m <description>```.
+To commit, execute: ```git commit -m <message> -m <description>```.  
+To undo this commit, execute ```git revert <SHA 1commit hash>```.  
+- To find the commit's hash, execute ```git log``` and search for it in the log
+
+To completely rollback to a specified commit, execute ```git reset --hard <SHA1 commit hash>```.
 
 ### 3. Push
 Once we finished making our commits for a new update, then we can push our changes to a repository. Only push after you have created commits, or else there won't be anything to push.
 
 To push, execute: ```git push <remote name> <branch name>```.
+- This means that we push our changes in <branch name> into <remote name>
+- The changes will show up in the remote repository in <branch name>
 
 A common example of git version control flow would look like this:
 ```bash
@@ -84,12 +92,13 @@ Now on GitHub, you would see two commits titled "Initialize a few C programs" an
 ### 1. Fetch
 If we want to view changes from another branch before committing those changes into your branch, then you can use git fetch as a safe way to accomplish this. Fetching only downloads the changes, but it does not change any files or create any commits.
 
-To fetch, execute ```git fetch <remote> <branch name>```
+To fetch, execute ```git fetch <remote> <branch name>```. This will now create a local copy named ```<remote>/<branch name>```, which we can merge later.
 
 ### 2. Merge
 If we want to merge changes from another branch, then we can merge them and change the files in our current branch. First, make sure to git fetch or else those changes will not be downloaded.
 
-To merge, execute ```git merge <remote> <branch name>```
+To merge, execute ```git merge <remote>/<branch name>```.  
+To revert the previous commit (which would be the merge commit), execute ```git revert HEAD```.
 
 Note that there may exist a merge conflict, which occurs whenever two files from two branches modify the same region of a file while merging. Git will add merge conflict markers on the files that had the merge conflicts, then you must go in and resolve them yourself following the markers. These markers separate the conflicts as either the "incoming change" or the "current change". Once you change the files, you can stage, commit, then push the resolved fixes to the remote repository.
 - A good text editor (such as VS Code) or IDE will make it easier for you to view these merge markers
