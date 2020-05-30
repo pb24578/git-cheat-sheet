@@ -114,4 +114,4 @@ If you been committing changes to your repository and have resolved merge confli
 If you make more commits in your branch, then the pull request will automatically show those commits as well. Therefore, there is no need to close your current pull request and create another one. A pull request is like a discussion, particularly for code reviews before merging into another engineer's branch.
 
 # TOWER's Git Cheat Sheet
-<img src="git_cheat_sheet.jpg" width=75% height=75% />
+<img src="git-cheat-sheet.png" width=65% height=65% />
