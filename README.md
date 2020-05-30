@@ -3,6 +3,9 @@ This is a personal git cheat sheet that I use to learn and understand how to use
 
 You must install he Git CLI (command line interface) from https://git-scm.com/.
 
+Follow this guide to connect to GitHub using SSH: https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+- This allows for your commits to show under your GitHub account
+
 # Initiating Repository
 ### 1. Init
 There is no need to use commands such as ```git init``` to initiate a repository. Simply go to GitHub and initiate the repository there.
