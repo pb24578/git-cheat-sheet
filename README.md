@@ -103,3 +103,6 @@ To pull, execute ```git pull <remote> <branch name>```.
 If you been committing changes to your repository and have resolved merge conflicts from the branch you want to make a pull request into, then you can create a pull request on GitHub. Your pull request will be reviewed by another engineer (typically a senior) and should give you a code review before merging your pull request into that engineer's branch.
 
 If you make more commits in your branch, then the pull request will automatically show those commits as well. Therefore, there is no need to close your current pull request and create another one. A pull request is like a discussion, particularly for code reviews before merging into another engineer's branch.
+
+# TOWER's Git Cheat Sheet
+<img src="git_cheat_sheet.jpg" width=75% height=75% />
