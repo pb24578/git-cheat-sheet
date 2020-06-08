@@ -51,7 +51,18 @@ To only switch to another branch, execute ```git checkout <branch name>```.
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we execute ```git remote add upstream <branch name>```.
 
 # Making Changes
-### 1. Stage
+### 1. Stash (Optional, only if you want to stash away changes for later)
+Stashing allows you to store your dirty or staged changes in a stack of unfinished changes that can be applied later.
+- Good to use for very messy code, especially during merge conflicts
+
+You can view your changes using ```git diff```. Type 'q' to quit the git diff console.  
+
+To create a new stash, execute ```git stash save <stash name>```.  
+To view the list of stashes, execute```git stash list```.  
+
+To apply a specific stash, execute ```git stash apply stash@{<stash id>}```. This will add back your changes to the specific files that were edited. Note that if you edit a file that has been stashed, then there will exist merge conflicts within the stash itself.
+
+### 2. Stage
 If you make changes to your repository and want to track that you've created these changes, then you must stage these changes. Staging is also very helpful because it allows you to separate the changes made between commits, so it organizes your changes even more.
 
 In order to stage, execute either:
@@ -64,7 +75,7 @@ After you stage files, you can execute ```git status``` which would display the 
 
 To revert a git add, execute ```git reset <file>``` or to revert all changes execute ```git reset```.
 
-### 2. Commit
+### 3. Commit
 If you want to record that you made changes, then you commit. Only commit after you've staged changes, or else it won't be able to see the record the tracked changes!
 
 To commit, execute: ```git commit -m <message> -m <description>```.  
@@ -73,7 +84,7 @@ To undo this commit, execute ```git revert <SHA 1commit hash>```.
 
 To completely rollback to a specified commit, execute ```git reset --hard <SHA1 commit hash>```.
 
-### 3. Push
+### 4. Push
 Once we finished making our commits for a new update, then we can push our changes to a repository. Only push after you have created commits, or else there won't be anything to push.
 
 To push, execute: ```git push <remote name> <branch name>```.
