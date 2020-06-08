@@ -5,6 +5,7 @@ You must install he Git CLI (command line interface) from https://git-scm.com/.
 
 Follow this https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh guide to connect to GitHub using SSH.
 - This allows for your commits to show under your GitHub account
+- You can also use your favorite text editor's (such as VSCode) version control integration to automatically connect to your GitHub account using OAuth
 
 # Initiating Repository
 ### 1. Init
