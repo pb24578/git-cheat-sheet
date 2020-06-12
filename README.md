@@ -46,7 +46,7 @@ Now that our repository has been cloned (and maybe added a remote if it was fork
 
 To create a new branch and switch into it, execute ```git checkout -b <branch name>```.  
 To check if the branch was created, execute ```git branch -a```.  
-To only switch to another branch, execute ```git checkout <branch name>```.  
+To only switch to another branch, execute ```git checkout <branch name>```. This will actually update your working code to the most recent commit of that branch, so your code base will change to the commits within that branch.
 
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we execute ```git remote add upstream <branch name>```.
 
@@ -79,10 +79,10 @@ To revert a git add, execute ```git reset <file>``` or to revert all changes exe
 If you want to record that you made changes, then you commit. Only commit after you've staged changes, or else it won't be able to see the record the tracked changes!
 
 To commit, execute: ```git commit -m <message> -m <description>```.  
-To undo this commit, execute ```git revert <SHA 1commit hash>```.  
+To undo this commit, execute ```git revert <SHA1 commit hash>```.  
 - To find the commit's hash, execute ```git log``` and search for it in the log
 
-To completely rollback to a specified commit, execute ```git reset --hard <SHA1 commit hash>```.
+To completely rollback to a specified commit, execute ```git reset --hard <SHA1 commit hash>```. This will change your working code base into the state of the previous commit's code base.
 
 ### 4. Push
 Once we finished making our commits for a new update, then we can push our changes to a repository. Only push after you have created commits, or else there won't be anything to push.
@@ -121,8 +121,7 @@ Note that there may exist a merge conflict, which occurs whenever two files from
 ### 3. Pull
 Pulling executes a fetch then a merge.
 
-To pull, execute ```git pull <remote> <branch name>```.  
-To undo the pull, execute ```git reset --hard```. This is helpful if merge conflicts occur.
+To pull, execute ```git pull <remote> <branch name>```.
 
 # Pull Requests (PR)
 If you been committing changes to your repository and have resolved merge conflicts from the branch you want to make a pull request into, then you can create a pull request on GitHub. Your pull request will be reviewed by another engineer (typically a senior) and should give you a code review before merging your pull request into that engineer's branch.
