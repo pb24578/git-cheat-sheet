@@ -62,6 +62,8 @@ To view the list of stashes, execute```git stash list```.
 
 To apply a specific stash, execute ```git stash apply stash@{<stash id>}```. This will add back your changes to the specific files that were edited. Note that if you edit a file that has been stashed, then there will exist merge conflicts within the stash itself.
 
+To delete a stash and the changes inside of the stash (will permanently delete the changes in the stash), execute ```git stash drop stash@{<stash id>}```.
+
 ### 2. Stage
 If you make changes to your repository and want to track that you've created these changes, then you must stage these changes. Staging is also very helpful because it allows you to separate the changes made between commits, so it organizes your changes even more.
 
