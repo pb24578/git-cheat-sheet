@@ -121,7 +121,8 @@ Note that there may exist a merge conflict, which occurs whenever two files from
 ### 3. Pull
 Pulling executes a fetch then a merge.
 
-To pull, execute ```git pull <remote> <branch name>```.
+To pull, execute ```git pull <remote> <branch name>```.  
+To undo the pull, execute ```git reset --hard```. This is helpful if merge conflicts occur.
 
 # Pull Requests (PR)
 If you been committing changes to your repository and have resolved merge conflicts from the branch you want to make a pull request into, then you can create a pull request on GitHub. Your pull request will be reviewed by another engineer (typically a senior) and should give you a code review before merging your pull request into that engineer's branch.
