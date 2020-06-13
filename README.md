@@ -107,9 +107,9 @@ Now on GitHub, you would see two commits titled "Initialize a few C programs" an
 
 # Receiving Changes
 ### 1. Fetch
-If we want to view changes from another branch before committing those changes into your branch, then you can use git fetch as a safe way to accomplish this. Fetching only downloads the changes, but it does not change any files or create any commits.
+Fetching downloads any changes from the repository. To download all changes (such as new branches), simply execute ```git fetch```. This will download changes but not modify anything in your working code. Fetching only downloads the changes, but it does not change any files or create any commits.
 
-To fetch, execute ```git fetch <remote> <branch name>```. This will now create a local copy named ```<remote>/<branch name>```, which we can merge later.
+To fetch a specific branch, execute ```git fetch <remote> <branch name>```. This will now create a local copy named ```<remote>/<branch name>```, which we can merge later.
 
 ### 2. Merge
 If we want to merge changes from another branch, then we can merge them and change the files in our current branch. First, make sure to git fetch or else those changes will not be downloaded.
