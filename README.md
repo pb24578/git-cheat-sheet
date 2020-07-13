@@ -46,7 +46,8 @@ Now that our repository has been cloned (and maybe added a remote if it was fork
 
 To create a new branch and switch into it, execute ```git checkout -b <branch name>```.  
 To check if the branch was created, execute ```git branch -a```.  
-To only switch to another branch, execute ```git checkout <branch name>```. This will actually update your working code to the most recent commit of that branch, so your code base will change to the commits within that branch.
+To only switch to another branch, execute ```git checkout <branch name>```. This will actually update your working code to the most recent commit of that branch, so your code base will change to the commits within that branch.  
+To rename the branch, execute ```git branch -m <new branch name>``` then push it using ```git push <remote name> <new branch name>```.  
 
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we execute ```git remote add upstream <branch name>```.
 
