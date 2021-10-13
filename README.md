@@ -139,7 +139,7 @@ squash b8ffdf6 Progress even more unit tests again
 This means the code changes from the commit a784c37, 4ec3faf, and b8ffdf6 will all be squashed into the "Progress on unit tests" commit.
   
 ### 3. Resetting git rebase
-If you want to abort from a git rebase before the changes are saved, then you can simply do ```git rebase --abort```. However, if you git rebase and want to revert the rebase that you already saved, you can execute ```git reflog``` and --hard reset back into the HEAD@{n} reference.
+If you want to abort from a git rebase before the changes are saved, then you can simply do ```git rebase --abort```. However, if you git rebase and want to revert the rebase that you already saved, you can execute ```git reflog``` and ```--hard``` reset back into the HEAD@{n} reference.
   
 For example, execute ```git reflog``` and HEAD@{3} was the commit reference before you rebased, then you can execute ```git reset --hard HEAD@{3}``` to revert your rebase changes.
 
