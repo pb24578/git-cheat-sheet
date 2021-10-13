@@ -105,6 +105,43 @@ git push origin develop
 ```
 
 Now on GitHub, you would see two commits titled "Initialize a few C programs" and "Create another C program".
+  
+# Rebasing Changes
+Sometimes we may make a commit and write the wrong the description, write the wrong title, make too many individual commits, or mess up the sequence of commits. We can resolve these issues using the ```git rebase -i HEAD~<n>``` or ```git rebase -i <SHA1 commit hash>``` command.
+  
+When you execute the ```git rebase -i <ARGS>``` command, you should see multiple options to modify your commits: pick, reword, edit, squash, fixup, exec, drop.
+  - p, pick = use commit
+  - r, reword = use commit, but edit the commit message
+  - e, edit = use commit, but stop for amending
+  - s, squash = use commit, but meld into previous commit
+  - f, fixup = like "squash", but discard this commit's log message
+  - x, exec = run command (the rest of the line) using shell
+  - d, drop = remove commit
+  
+### 1. Rewording commit message
+Execute ```git rebase -i <commit-sha1>``` using the SHA1 of the commit you want to edit. Then change the "pick" part before the commit message to "reword" and save the file. Once the file is saved, a new file will open in your Terminal to edit the commit message. Once you edit the commit message, save.
+  
+The commit message should now be changed.
+  
+### 2. Squashing commits
+If commits are together and should probably be combined into a single commit (to make the git tree to look easier to read), then you can use the "squash" option. Execute ```git rebase -i HEAD~<n>``` where n is the n last number of commits. The menu should appear again. Pick a single commit and any commits below the pick commit that you want to squash into the pick commit.
+  
+Here's an example:
+```
+pick 953be09 Code the header
+pick 99fc6a8 Code the body
+pick 8ddb4bc Code the footer
+pick a784c37 Progress on unit tests
+squash 4ec3faf Progress more unit tests again
+squash b8ffdf6 Progress even more unit tests again
+```
+  
+This means the code changes from the commit a784c37, 4ec3faf, and b8ffdf6 will all be squashed into the "Progress on unit tests" commit.
+  
+### 3. Resetting git rebase
+If you want to abort from a git rebase before the changes are saved, then you can simply do ```git rebase --abort```. However, if you git rebase and want to revert the rebase that you already saved, you can execute ```git reflog``` and --hard reset back into the HEAD@{n} reference.
+  
+For example, execute ```git reflog``` and HEAD@{3} was the commit reference before you rebased, then you can execute ```git reset --hard HEAD@{3}``` to revert your rebase changes.
 
 # Receiving Changes
 ### 1. Fetch
