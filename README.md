@@ -2,7 +2,7 @@
 This is a personal git cheat sheet that I use to learn and understand how to use rudementary git commands. It follows a sequential flow from starting a project, staging files, committing changes, then pushing those commits to the repository.
 
 Useful Links:
-1. You must install the Git CLI (command line interface) from https://git-scm.com/.  
+1. Install the Git CLI (command line interface): https://git-scm.com/  
 2. If you mess up anything when using git, you can follow this guide: https://ohshitgit.com/
 
 # Initiating Repository
