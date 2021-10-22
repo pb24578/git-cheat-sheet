@@ -1,13 +1,9 @@
 # Git Cheat Sheet
 This is a personal git cheat sheet that I use to learn and understand how to use rudementary git commands. It follows a sequential flow from starting a project, staging files, committing changes, then pushing those commits to the repository.
 
-You must install he Git CLI (command line interface) from https://git-scm.com/.
-
-Follow this https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh guide to connect to GitHub using SSH.
-- This allows for your commits to show under your GitHub account
-- You can also use your favorite text editor's (such as VSCode) version control integration to automatically connect to your GitHub account using OAuth
-
-If you mess up anything when using git, you can follow this guide: https://ohshitgit.com/
+Useful Links:
+1. You must install the Git CLI (command line interface) from https://git-scm.com/.  
+2. If you mess up anything when using git, you can follow this guide: https://ohshitgit.com/
 
 # Initiating Repository
 ### 1. Init
