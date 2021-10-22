@@ -7,6 +7,8 @@ Follow this https://help.github.com/en/github/authenticating-to-github/connectin
 - This allows for your commits to show under your GitHub account
 - You can also use your favorite text editor's (such as VSCode) version control integration to automatically connect to your GitHub account using OAuth
 
+If you mess up anything when using git, you can follow this guide: https://ohshitgit.com/
+
 # Initiating Repository
 ### 1. Init
 There is no need to use commands such as ```git init``` to initiate a repository. Simply go to GitHub and initiate the repository there.
