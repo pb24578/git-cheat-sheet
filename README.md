@@ -142,6 +142,13 @@ This means the code changes from the commit a784c37, 4ec3faf, and b8ffdf6 will a
 If you want to abort from a git rebase before the changes are saved, then you can simply do ```git rebase --abort```. However, if you git rebase and want to revert the rebase that you already saved, you can execute ```git reflog``` and ```git reset --hard``` reset back into the HEAD@{n} reference.
   
 For example, execute ```git reflog``` and HEAD@{3} was the commit reference before you rebased, then you can execute ```git reset --hard HEAD@{3}``` to revert your rebase changes.
+  
+### 4. Solving messy git trees from rebase using git cherry-pick
+What if we already pushed the un-squashed commits into the branch and then push a single squashed commit? This would create a really messy git tree when we pushed the squashed commits into the branch. The goal is to make a clean and linear git tree that just only has the squashed commit.
+  
+In order to resolve this, checkout on another branch from your master branch. We can then cherry pick the squashed commit in our new branch from the old branch. To perform this, we can do ```git cherry-pick <commit-hash>``` where the commit-hash is the squashed commit.
+  
+Now, you can push the new branch and the git tree should be much cleaner in the new branch.
 
 # Receiving Changes
 ### 1. Fetch
