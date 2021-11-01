@@ -42,10 +42,11 @@ Now there are two remotes, which are origin and upstream. We can now use version
 ### 4. Branch
 Now that our repository has been cloned (and maybe added a remote if it was forked), we can start creating our own development version called a "Branch".
 
-To create a new branch and switch into it, execute ```git checkout -b <branch name>```.  
-To check if the branch was created, execute ```git branch -a```.  
-To only switch to another branch, execute ```git checkout <branch name>```. This will actually update your working code to the most recent commit of that branch, so your code base will change to the commits within that branch.  
-To rename the branch, execute ```git branch -m <new branch name>``` then push it using ```git push <remote name> <new branch name>```.  
+- To create a new branch and switch into it, execute ```git checkout -b <branch name>```
+- To check if the branch was created, execute ```git branch -a```
+- To only switch to another branch, execute ```git checkout <branch name>```. This will actually update your working code to the most recent commit of that branch, so your code base will change to the commits within that branch
+- To rename the branch, execute ```git branch -m <new branch name>``` then push it using ```git push <remote name> <new branch name>```
+- To delete the branch locally execute ```git branch -D <branch name>```, then to delete the branch remotely execute ```git push -d <remote name> <branch name>```  
 
 If we forked this repository, we also need to connect the remote for this new branch by executing ```git remote add <remote name> <branch name>```. For example, for upstream, we execute ```git remote add upstream <branch name>```.
 
